@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperación JS DIM43</title>
+    <!-- <link href="css/estilos.css" rel='stylesheet'/>  -->
+  </head>
+
+  <body onload="cargarApp()">
+    <div class="cabecero">
+      <div class="presupuesto">
+        <div class="presupuesto_titulo">Presupuesto Disponible</div>
+        <!-- CAPA QUE MUESTRA EL PRESUPUESTO DISPONIBLE (TOTAL INGRESOS - TOTAL EGRESOS) -->
+        <div class="presupuesto_valor">+ 2,000.00</div>
+        <div class="presupuesto_ingreso limpiarEstilos">
+          <div class="presupuesto_ingreso--texto">Ingresos</div>
+          <div class="alinear">
+            <!-- CAPA QUE MUESTRA EL TOTAL DE INGRESOS -->
+            <div class="presupuesto_ingreso--valor" id="ingresos">+4,000.00</div>
+            <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+          </div>
+        </div>
+        <div class="presupuesto_egreso limpiarEstilos">
+          <div class="presupuesto_egreso--texto">Egresos</div>
+          <div class="alinear limpiarEstilos">
+            <!-- CAPA QUE MUESTRA EL TOTAL DE EGRESOS QUE TENGO -->
+            <div class="presupuesto_egreso--valor" id="egresos">- 1,900.00</div>
+            <!-- CAPA QUE MUESTRA EL PROCENTAJE  EGRESOS RESPECTO AL TOTAL DE INGRESOS -->
+            <div class="presupuesto_egreso--porcentaje">45%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form id="form" onsubmit="return false;">
+      <div class="agregar">
+        <div class="agregar_contenedor">
+          <select class="agregar_tipo" id="tipo">
+            <option value="egreso">-</option>
+            <option value="ingreso">+</option>
+          </select>
+          <input type="text" class="agregar_descripcion" placeholder="Agregar Descripción" id="descripcion" />
+          <input type="number" class="agregar_valor" placeholder="Valor" id="valor" step="any" />
+        </div>
+      </div>
+    </form>
+    <div class="contenedor limpiarEstilos">
+      <div class="ingreso">
+        <h2 class="ingreso_titulo">Ingresos</h2>
+        <!-- div que vamos a sustituir dinámicamente -->
+        <div id="lista-ingresos">
+          <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">Salario</div>
+            <div class="alinear limpiarEstilos">
+              <div class="elemento_valor">+ 2,200.00</div>
+              <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn">
+                  <ion-icon name="close-circle-outline" onclick="eliminarIngreso(id)"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">Venta coche</div>
+            <div class="alinear limpiarEstilos">
+              <div class="elemento_valor">+ 1,500.00</div>
+              <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn">
+                  <ion-icon name="close-circle-outline" onclick="eliminarIngreso(id)"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="egreso">
+        <h2 class="egreso_titulo">Egreso</h2>
+        <div id="lista-egresos">
+          <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">Alquiler piso</div>
+            <div class="alinear limpiarEstilos">
+              <div class="elemento_valor">- 900.00</div>
+              <!-- PORCENTAJE SOBRE EL TOTAL DE INGRESOS -->
+              <div class="elemento_porcentaje">21%</div>
+              <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn">
+                  <ion-icon name="close-circle-outline" onclick="eliminarEgreso(id)"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">Ropa</div>
+            <div class="alinear limpiarEstilos">
+              <div class="elemento_valor">- 400.00</div>
+              <!-- PORCENTAJE SOBRE EL TOTAL DE INGRESOS -->
+              <div class="elemento_porcentaje">10%</div>
+              <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn">
+                  <ion-icon name="close-circle-outline" onclick="eliminarEgreso(id)"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/NOTOCAR.js"></script>
+  </body>
+</html>

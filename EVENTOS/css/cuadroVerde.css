@@ -1,0 +1,11 @@
+.cuadro {
+  background-color: green;
+  color: white;
+  width: 20vw;
+  height: 50vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

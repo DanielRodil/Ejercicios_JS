@@ -16,6 +16,8 @@ letra = "DIM"[0]; // 'D'
 console.log('letra = ', letra);
 letra = texto[1];
 console.log('letra = ', letra);
+let spl = "Hola, pepe, luis y jose".split(",");
+console.log(spl);
 
 
 //SECUENCIAS DE ESCAPE
