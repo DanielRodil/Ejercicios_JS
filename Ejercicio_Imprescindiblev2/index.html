@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>JS</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- JS -->
+  <script src="./js/json.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+
+<body>
+  <header class="container-fluid bg-light">
+    <h1 class="text-center text-primary personajes">EJERCICIO DE REPASO</h1>
+    <h3 class="text-center text-dark titulo">TÍTULO</h3>
+  </header>
+  <main class="container bg-white">
+    <div class="row">
+      <div class="col-4">
+        <h3 class="text-center text-info">Planeta A</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr class="table-info">
+              <th>Nombre</th>
+              <th>Películas</th>
+            </tr>
+          </thead>
+          <tbody class="planetsA">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <h6>Altura media</h6>
+              </td>
+              <td class="altura-mediaA"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Máxima altura</h6>
+              </td>
+              <td class="altura-maximaA"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Peso medio</h6>
+              </td>
+              <td class="peso-medioA"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Máximo peso</h6>
+              </td>
+              <td class="peso-maximoA"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="col-4">
+        <h3 class="text-center text-info">Planeta B</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr class="table-info">
+              <th>Nombre</th>
+              <th>Películas</th>
+            </tr>
+          </thead>
+          <tbody class="planetsB">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <h6>Altura media</h6>
+              </td>
+              <td class="altura-mediaB"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Máxima altura</h6>
+              </td>
+              <td class="altura-maximaB"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Peso medio</h6>
+              </td>
+              <td class="peso-medioB"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Máximo peso</h6>
+              </td>
+              <td class="peso-maximoB"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="col-4">
+        <h3 class="text-center text-info">Planeta C</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr class="table-info">
+              <th>Nombre</th>
+              <th>Películas</th>
+            </tr>
+          </thead>
+          <tbody class="planetsC">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <h6>Altura media</h6>
+              </td>
+              <td class="altura-mediaC"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Máxima altura</h6>
+              </td>
+              <td class="altura-maximaC"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Peso medio</h6>
+              </td>
+              <td class="peso-medioC"></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Máximo peso</h6>
+              </td>
+              <td class="peso-maximoC"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+   
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <h3 class="text-info">Películas del Personaje</h3>
+      </div>      
+    </div>
+    <div class="row">
+          <div class="col-3">
+            <h6>Seleccione personaje</h6>
+            <select class="form-select" id="select-personaje" aria-label="Default select example" onchange="filtrarPeliculas()">
+              <option selected>Open this select menu</option>
+              <option value="1">Luke Skywalker</option>
+              <option value="2">C-3PO</option>
+              <option value="3">R2-D2</option>
+              <option value="4">Darth Vader</option>
+              <option value="5">Leia Organa</option>
+              <option value="6">Owen Lars</option>
+              <option value="7">Beru Whitesun lars</option>
+              <option value="8">R5-D4</option>
+              <option value="9">Biggs Darklighter</option>
+              <option value="10">Obi-Wan Kenobi</option>
+            </select>
+          </div>
+          <div class="col-9">
+            <h5 class="text-center bg-light">Películas</h5>
+            <div class="peliculas-personaje text-primary"></div>
+          </div>
+    </div> 
+  </main>
+  <footer class="container-fluid bg-secondary">
+    <h3 class="text-center">PIE DE PAGINA</h3>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
